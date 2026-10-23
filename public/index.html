@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Elm & Fern is the sample shop Maintainer Pro opens as a trial app. Change the name, the colors, or the catalog."
+    />
+    <meta name="theme-color" content="#f3ecdf" />
+    <title>Elm & Fern</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip" href="#catalog">Skip to the shop</a>
+    <header class="top">
+      <p class="banner" id="banner"></p>
+      <div class="top-bar">
+        <div class="wrap top-inner">
+          <a class="mark" id="mark" href="#catalog">Elm &amp; Fern</a>
+          <form id="search-form" class="search-form" role="search">
+            <label class="search">
+              <span class="sr-only">Search the shop</span>
+              <input id="search" type="search" placeholder="Search the shop" autocomplete="off" />
+            </label>
+          </form>
+          <button id="bag-open" class="bag-open" type="button" aria-haspopup="dialog" aria-controls="bag">
+            Bag
+            <span id="bag-count">0</span>
+          </button>
+        </div>
+      </div>
+      <section class="try" aria-label="Try a change">
+        <div class="wrap try-inner">
+          <p id="try-status" class="try-status" aria-live="polite">
+            Hover a number to see what it changes. Click it to copy the message.
+          </p>
+          <div id="hooks" class="try-list"></div>
+        </div>
+      </section>
+    </header>
+    <main>
+      <section class="hero">
+        <div class="wrap hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow" id="eyebrow"></p>
+            <h1 id="shop-name"></h1>
+            <div class="rule" aria-hidden="true"></div>
+            <p class="lede" id="tagline"></p>
+            <dl class="facts">
+              <div>
+                <dt>Visit</dt>
+                <dd id="address"></dd>
+              </div>
+              <div>
+                <dt>Hours</dt>
+                <dd id="hours"></dd>
+              </div>
+            </dl>
+          </div>
+          <article class="featured" id="featured" hidden></article>
+        </div>
+      </section>
+      <section class="catalog" id="catalog" aria-labelledby="catalog-title">
+        <div class="wrap">
+          <div class="catalog-head">
+            <h2 id="catalog-title">In the shop</h2>
+            <p id="count" class="count" aria-live="polite"></p>
+          </div>
+          <div id="filters" class="filters" role="group" aria-label="Categories"></div>
+          <ul id="grid" class="grid"></ul>
+          <p id="empty" class="empty" hidden>Nothing in the shop matches that search.</p>
+        </div>
+      </section>
+    </main>
+    <footer class="foot">
+      <div class="wrap">
+        <p id="footer-line"></p>
+      </div>
+    </footer>
+    <dialog id="bag" aria-labelledby="bag-title">
+      <form method="dialog">
+        <div class="bag-head">
+          <h2 id="bag-title">Your bag</h2>
+          <button id="bag-close" class="bag-close" type="submit">Close</button>
+        </div>
+        <div class="bag-body">
+          <p id="bag-note" class="bag-note" aria-live="polite"></p>
+          <p id="bag-empty" class="bag-empty" hidden>Your bag is empty.</p>
+          <ul id="bag-lines" class="bag-lines"></ul>
+        </div>
+        <div class="bag-foot" id="bag-foot" hidden>
+          <p class="subtotal"><span>Subtotal</span> <strong id="bag-total">$0</strong></p>
+          <button id="pickup" class="pickup" type="button">Request pickup</button>
+        </div>
+      </form>
+    </dialog>
+    <noscript><p class="empty wrap">This shop needs JavaScript enabled.</p></noscript>
+    <script src="app.js"></script>
+  </body>
+</html>
